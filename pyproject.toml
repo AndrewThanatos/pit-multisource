@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pit_multisource"
+version = "1.0.0"
+description = "Rebuilds a point-in-time multi-source dataset and reproduces the article's numbers."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Andrii Berezhniuk" }]
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=2.1,<3",
+    "pyyaml>=6.0",
+]
+
+[project.urls]
+Repository = "https://github.com/AndrewThanatos/pit-multisource"
+
+[project.scripts]
+pit-multisource = "pit_multisource.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pit_multisource"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"configs/pipeline.yaml" = "pit_multisource/configs/pipeline.yaml"
+"expected/paper_values.json" = "pit_multisource/expected/paper_values.json"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "equivalence: compares rebuilt tables with the released dataset; needs PIT_DATASET and PIT_SOURCES",
+]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

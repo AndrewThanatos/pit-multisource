@@ -1,0 +1,127 @@
+# Parameters of the pipeline, as fixed by the article.
+
+bars:
+  months_first: "2019-01"
+  months_last: "2026-07"
+  symbols: [BTCUSDT, ETHUSDT]
+
+news:
+  # A record is on topic when one of these tokens appears among its theme codes.
+  theme_tokens: [ECON_BITCOIN]
+  # A record is also on topic when one of these terms appears as a whole word, ignoring case, in
+  # its names, organisations or URL; a term listed in suffix_terms also matches longer words.
+  selection_terms: [bitcoin, ethereum, cryptocurrenc, stablecoin, coinbase, binance, kraken, tether]
+  suffix_terms: [cryptocurrenc]
+  # Whole-word, case-insensitive terms searched in names, organisations and the URL.
+  entity_terms:
+    btc: [bitcoin]
+    eth: [ethereum]
+  # Theme tokens that mark a record as about an asset; GDELT has no Ethereum theme.
+  asset_theme_tokens:
+    btc: [ECON_BITCOIN]
+    eth: []
+  join_window_hours: 24
+  age_cap_hours: 72
+  min_shared_entities: 2
+  # Entities that never count towards the shared-entity overlap.
+  stop_entities:
+    - bitcoin
+    - ethereum
+    - cryptocurrency
+    - cryptocurrencies
+    - crypto
+    - blockchain
+    - stablecoin
+    - coinbase
+    - binance
+    - kraken
+    - tether
+
+gdelt:
+  base_url: "http://data.gdeltproject.org/gdeltv2"
+  user_agent: "pit-multisource/0.1"
+  request_delay_seconds: 0.05
+  timeout_seconds: 120
+  # A failed request is retried up to max_retries times, waiting min(base * 2^(n-1), cap) seconds.
+  max_retries: 5
+  backoff_base_seconds: 5
+  backoff_cap_seconds: 120
+  # A run stops after this many slots in a row that could not be fetched.
+  max_consecutive_unresolved: 20
+  ingest_version: "0.1.0"
+
+targets:
+  execution_latency_seconds: 30
+  max_entry_delay_seconds: 300
+  horizon_hours: [4, 24]
+  # Targets are built only from bars strictly before this instant.
+  boundary: "2025-08-01T00:00:00Z"
+
+# Walk-forward evaluation folds. Fold k (1-based) trains on [train_start, first_train_end +
+# (k - 1) * step_months) and tests on [train_end + gap_months, train_end + gap_months +
+# test_months). The refit fold trains on [train_start, refit_train_end) and has no test window.
+split_boundaries:
+  train_start: "2019-01-01T00:00:00Z"
+  first_train_end: "2021-01-01T00:00:00Z"
+  step_months: 3
+  gap_months: 3
+  test_months: 3
+  test_folds: 17
+  refit_train_end: "2025-08-01T00:00:00Z"
+
+replay:
+  seed: 20260913
+  # Random cutoffs are drawn per calendar year in [first_year, last_year], per_year each.
+  per_year: 28
+  first_year: 2019
+  last_year: 2025
+  # The first year's draw starts here; every year's draw ends before period_end.
+  first_cutoff: "2019-01-02T00:00:00Z"
+  period_end: "2025-08-01T00:00:00Z"
+  # Fixed cutoffs at slot ends, the age-cap edge, the outage edges and the period edges.
+  boundary_cutoffs:
+    - "2019-01-01T00:15:00Z"
+    - "2019-01-03T23:59:59.999999Z"
+    - "2019-01-04T00:00:00Z"
+    - "2019-01-04T00:00:00.000001Z"
+    - "2023-10-18T11:14:59.999999Z"
+    - "2023-10-18T11:15:00Z"
+    - "2023-10-18T11:15:00.000001Z"
+    - "2023-10-18T12:00:00Z"
+    - "2025-06-17T00:00:00Z"
+    - "2025-07-01T00:00:00Z"
+    - "2025-07-31T23:59:59.999999Z"
+
+calendar:
+  first_year: 2016
+  last_year: 2026
+  # Both the Fed and BLS state release times in US Eastern wall-clock time.
+  timezone: America/New_York
+  # Release priority by family, highest first.
+  tiers:
+    fomc_statement: 4
+    cpi: 3
+    employment_situation: 2
+    ppi: 1
+  # A BLS row belongs to a family when its title is exactly "<title> for <Month> <Year>".
+  bls_titles:
+    cpi: Consumer Price Index
+    ppi: Producer Price Index
+    employment_situation: Employment Situation
+  # Eastern time of a future FOMC statement, and of a past one whose page states no time.
+  fomc_statement_time: "14:00"
+  # The Fed had no historical page for these years when the dataset was built (404 in 2026).
+  fomc_rolling_from_year: 2021
+  urls:
+    fomc_year: "https://www.federalreserve.gov/monetarypolicy/fomchistorical{year}.htm"
+    fomc_rolling: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    fomc_press: "https://www.federalreserve.gov/newsevents/pressreleases/{name}.htm"
+    bls_year: "https://www.bls.gov/schedule/{year}/home.htm"
+  # Archived file per page; the rolling page is the 2026-08-26 copy, and `acquire calendar` reuses its name.
+  pages:
+    fomc_year: "fomc/historical-{year}.html"
+    fomc_rolling: "fomc/calendars.9cb9e5ff5b19.html"
+    fomc_press: "fomc/{name}.html"
+    bls_year: "bls/year-{year}.html"
+  request_delay_seconds: 0.5
+  timeout_seconds: 60

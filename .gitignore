@@ -1,0 +1,11 @@
+.venv/
+out/
+results/
+.plan/
+.superpowers/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+.DS_Store
