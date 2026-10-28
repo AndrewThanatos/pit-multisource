@@ -97,12 +97,13 @@ value printed in the article:
 
 ```bash
 export PYTHONHASHSEED=0 POLARS_MAX_THREADS=1 TZ=UTC
-pit-multisource reproduce --dataset pit-multisource-v1.0.0 --shared-ids shared_record_ids.parquet
+pit-multisource reproduce --dataset pit-multisource-v1.0.0 \
+  --shared-ids pit-multisource-materials-v1.0.0/inputs/shared_record_ids.parquet
 ```
 
 `shared_record_ids.parquet` lists the 2,003,579 records shared by the released news corpus and the
-earlier corpus that Table 4, Table 6 (rows 4–5), §3.6 and §4.2 compare on. It is in the Materials record
-([DOI 10.5281/zenodo.MATERIALS](https://doi.org/10.5281/zenodo.MATERIALS)). Without `--shared-ids`
+earlier corpus that Table 4, Table 6 (rows 4–5), §3.6 and §4.2 compare on. It is in `inputs/` of the
+Materials record ([DOI 10.5281/zenodo.MATERIALS](https://doi.org/10.5281/zenodo.MATERIALS)). Without `--shared-ids`
 the whole `grouping` experiment (those 42 entries) is reported as skipped and the rest still runs.
 
 The command writes `results/<experiment>.json` (change with `--out`), prints the comparison, and
@@ -181,7 +182,7 @@ pit-multisource build news --dataset pit-multisource-v1.0.0 --out rebuilt/news
 pit-multisource build entities --dataset pit-multisource-v1.0.0 --out rebuilt/news
 pit-multisource build source-domains --dataset pit-multisource-v1.0.0 --out rebuilt/source_domains
 
-pit-multisource build calendar --pages materials/calendar --out rebuilt/calendar
+pit-multisource build calendar --pages pit-multisource-materials-v1.0.0/inputs/calendar_pages --out rebuilt/calendar
 pit-multisource acquire calendar --out live_calendar --user-agent "your-name your@email.example"
 
 pit-multisource acquire gdelt --start 2023-10-18T00:00:00Z --end 2023-10-19T00:00:00Z --out gdelt
@@ -257,9 +258,10 @@ skipped when a variable is not set:
 
 ```bash
 export PIT_DATASET=pit-multisource-v1.0.0          # the unpacked dataset
-export PIT_SOURCES=sources                         # binance/ from `acquire binance`, calendar/ from the
-                                                   # Materials record, gdelt_sample/ from the tools script
-export PIT_SHARED_IDS=shared_record_ids.parquet    # from the Materials record
+export PIT_SOURCES=sources                         # binance/ from `acquire binance`, calendar/ = a copy of
+                                                   # inputs/calendar_pages from the Materials record,
+                                                   # gdelt_sample/ from the tools script
+export PIT_SHARED_IDS=pit-multisource-materials-v1.0.0/inputs/shared_record_ids.parquet
 export PIT_FROZEN_TARGETS=frozen_targets           # author only: the article's frozen targets (not published)
 uv run pytest -m equivalence
 ```
