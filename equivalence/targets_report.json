@@ -1,0 +1,51 @@
+{
+  "boundary": "2025-08-01T00:00:00Z",
+  "restriction_rule": "Frozen rows are compared only when their exposure ends strictly before the boundary: coalesce(label_availability_time, decision_time + horizon + 390 s) < boundary. The keys are selected from the clock columns first; the other columns are read for those keys only.",
+  "comparison": "polars DataFrame.equals on the 13 public table columns (same dtypes, exact floats), rows sorted by decision_time within each horizon; frozen columns outside the public schema are not compared, only checked to hold one distinct value each",
+  "rebuild": "build_targets from the released one-minute bars with open_time < boundary",
+  "symbols": {
+    "BTCUSDT": {
+      "frozen_file": "BTCUSDT/targets.parquet",
+      "frozen_sha256": "ed9c299bc6ea85762d0d5029add10e451105081def116624e1d40216eca44685",
+      "admitted_rows_at_or_past_boundary": 0,
+      "admitted_exits_at_or_past_boundary": 0,
+      "filled_rows_exiting_before_boundary_not_compared": 0,
+      "frozen_only_columns": 1,
+      "frozen_only_columns_constant": true,
+      "horizons": {
+        "4h": {
+          "rows_compared": 57692,
+          "rebuilt_eligible_rows": 57692,
+          "equal": true
+        },
+        "24h": {
+          "rows_compared": 57672,
+          "rebuilt_eligible_rows": 57672,
+          "equal": true
+        }
+      }
+    },
+    "ETHUSDT": {
+      "frozen_file": "ETHUSDT/targets.parquet",
+      "frozen_sha256": "d89e619fbf049501f157d06c7488412012e06c28f865f9f43d8254a228311652",
+      "admitted_rows_at_or_past_boundary": 0,
+      "admitted_exits_at_or_past_boundary": 0,
+      "filled_rows_exiting_before_boundary_not_compared": 0,
+      "frozen_only_columns": 1,
+      "frozen_only_columns_constant": true,
+      "horizons": {
+        "4h": {
+          "rows_compared": 57692,
+          "rebuilt_eligible_rows": 57692,
+          "equal": true
+        },
+        "24h": {
+          "rows_compared": 57672,
+          "rebuilt_eligible_rows": 57672,
+          "equal": true
+        }
+      }
+    }
+  },
+  "equal": true
+}
