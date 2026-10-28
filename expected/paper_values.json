@@ -1,0 +1,1669 @@
+{
+  "paper": [
+    {
+      "id": "t2.hourly_bars.btc",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.bars_1h.btcusdt",
+      "value": 66397
+    },
+    {
+      "id": "t2.hourly_bars.eth",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.bars_1h.ethusdt",
+      "value": 66397
+    },
+    {
+      "id": "t2.minute_bars.btc",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.bars_1m.btcusdt",
+      "value": 3983271
+    },
+    {
+      "id": "t2.minute_bars.eth",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.bars_1m.ethusdt",
+      "value": 3983270
+    },
+    {
+      "id": "t2.news_records",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.news_records",
+      "value": 2320951
+    },
+    {
+      "id": "t2.news_clusters",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.news_clusters",
+      "value": 779559
+    },
+    {
+      "id": "t2.entities",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.entities",
+      "value": 2594121
+    },
+    {
+      "id": "t2.source_domains",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.source_domains",
+      "value": 16184
+    },
+    {
+      "id": "t2.source_domain_pairs",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.source_domain_pairs",
+      "value": 4194687
+    },
+    {
+      "id": "t2.macro_releases",
+      "section": "Table 2",
+      "experiment": "sizes",
+      "key": "sizes.macro_releases",
+      "value": 482
+    },
+    {
+      "id": "s36.development_records",
+      "section": "§3.6 text",
+      "experiment": "descriptive",
+      "key": "cluster_shape.records",
+      "value": 2055263
+    },
+    {
+      "id": "s36.shared_records",
+      "section": "§3.6 text",
+      "experiment": "grouping",
+      "key": "grouping.records",
+      "value": 2003579
+    },
+    {
+      "id": "t3.slice.records",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "slice.records",
+      "value": 59822
+    },
+    {
+      "id": "t3.slice.clusters_rebuilt",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "slice.clusters.rebuilt",
+      "value": 24319
+    },
+    {
+      "id": "t3.slice.clusters_released",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "slice.clusters.released",
+      "value": 24319
+    },
+    {
+      "id": "t3.slice.assignments_equal",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "slice.assignments_equal",
+      "value": true
+    },
+    {
+      "id": "t3.cutoffs.sampled",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.cutoffs.sampled",
+      "value": 196
+    },
+    {
+      "id": "t3.cutoffs.boundary",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.cutoffs.boundary",
+      "value": 11
+    },
+    {
+      "id": "t3.cutoffs",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.cutoffs",
+      "value": 207
+    },
+    {
+      "id": "t3.dated.agree",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.dated.agree",
+      "value": 207
+    },
+    {
+      "id": "t3.lifetime.agree",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.lifetime.agree",
+      "value": 15
+    },
+    {
+      "id": "t3.lifetime.disagree",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "replay.lifetime.disagree",
+      "value": 192
+    },
+    {
+      "id": "t3.assignment.records_released",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.rows_left",
+      "value": 2055263
+    },
+    {
+      "id": "t3.assignment.records_rebuilt",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.rows_right",
+      "value": 2055263
+    },
+    {
+      "id": "t3.assignment.missing_in_rebuilt",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.keys_only_in_left",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.missing_in_released",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.keys_only_in_right",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.duplicates_released",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.duplicate_keys_left",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.duplicates_rebuilt",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.duplicate_keys_right",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.null_released",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.null_cluster_id_left",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.null_rebuilt",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.null_cluster_id_right",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.unequal",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.shared_keys_disagreeing",
+      "value": 0
+    },
+    {
+      "id": "t3.assignment.identical",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "assignment.identical",
+      "value": true
+    },
+    {
+      "id": "t3.controls.passed",
+      "section": "Table 3",
+      "experiment": "replay",
+      "key": "controls.passed",
+      "value": 6
+    },
+    {
+      "id": "s41.dated.disagree",
+      "section": "§4.1 text",
+      "experiment": "replay",
+      "key": "replay.dated.disagree",
+      "value": 0
+    },
+    {
+      "id": "s41.lifetime.disagree_pct",
+      "section": "§4.1 text",
+      "experiment": "replay",
+      "key": "replay.lifetime.disagree_pct",
+      "value": 92.75,
+      "decimals": 2
+    },
+    {
+      "id": "t4.unbounded.clusters",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.clusters",
+      "value": 666635
+    },
+    {
+      "id": "t4.unbounded.address_joins",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.url_route_joins",
+      "value": 3492
+    },
+    {
+      "id": "t4.unbounded.address_joins_refused",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.url_joins_refused_by_age_cap",
+      "value": 0
+    },
+    {
+      "id": "t4.unbounded.max_span_h",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.max_span_hours",
+      "value": 54436
+    },
+    {
+      "id": "t4.unbounded.over_72h",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.clusters_over_published_cap",
+      "value": 2867
+    },
+    {
+      "id": "t4.unbounded.over_72h_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.clusters_over_published_cap_pct",
+      "value": 0.43,
+      "decimals": 3
+    },
+    {
+      "id": "t4.unbounded.crossing",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.crossing_clusters",
+      "value": 2295
+    },
+    {
+      "id": "t4.unbounded.crossing_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.crossing_clusters_pct",
+      "value": 0.344,
+      "decimals": 3
+    },
+    {
+      "id": "t4.unbounded.crossing_fold_pairs",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.crossing_cluster_fold_pairs",
+      "value": 2545
+    },
+    {
+      "id": "t4.unbounded.address_fold_pairs",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.url_fold_pairs",
+      "value": 2674
+    },
+    {
+      "id": "t4.unbounded.size_p50",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.size_median",
+      "value": 1
+    },
+    {
+      "id": "t4.unbounded.size_p95",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.size_p95",
+      "value": 7
+    },
+    {
+      "id": "t4.unbounded.size_p99",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.size_p99",
+      "value": 26
+    },
+    {
+      "id": "t4.unbounded.singletons_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.singleton_share",
+      "value": 76.69,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t4.bounded.clusters",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.clusters",
+      "value": 668519
+    },
+    {
+      "id": "t4.bounded.address_joins",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.url_route_joins",
+      "value": 19
+    },
+    {
+      "id": "t4.bounded.address_joins_refused",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.url_joins_refused_by_age_cap",
+      "value": 3473
+    },
+    {
+      "id": "t4.bounded.max_span_h",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.max_span_hours",
+      "value": 72
+    },
+    {
+      "id": "t4.bounded.over_72h",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.clusters_over_published_cap",
+      "value": 0
+    },
+    {
+      "id": "t4.bounded.over_72h_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.clusters_over_published_cap_pct",
+      "value": 0
+    },
+    {
+      "id": "t4.bounded.crossing",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.crossing_clusters",
+      "value": 0
+    },
+    {
+      "id": "t4.bounded.crossing_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.crossing_clusters_pct",
+      "value": 0
+    },
+    {
+      "id": "t4.bounded.crossing_fold_pairs",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.crossing_cluster_fold_pairs",
+      "value": 0
+    },
+    {
+      "id": "t4.bounded.address_fold_pairs",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.url_fold_pairs",
+      "value": 2674
+    },
+    {
+      "id": "t4.bounded.size_p50",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.size_median",
+      "value": 1
+    },
+    {
+      "id": "t4.bounded.size_p95",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.size_p95",
+      "value": 7
+    },
+    {
+      "id": "t4.bounded.size_p99",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.size_p99",
+      "value": 26
+    },
+    {
+      "id": "t4.bounded.singletons_pct",
+      "section": "Table 4",
+      "experiment": "grouping",
+      "key": "grouping.bounded.singleton_share",
+      "value": 76.95,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "s42.unbounded.records",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.unbounded.records",
+      "value": 2003579
+    },
+    {
+      "id": "s42.bounded.records",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.bounded.records",
+      "value": 2003579
+    },
+    {
+      "id": "s42.cluster_increase",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.bounded_minus_unbounded.clusters",
+      "value": 1884
+    },
+    {
+      "id": "s42.cluster_increase_pct",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.bounded_minus_unbounded.clusters_pct",
+      "value": 0.28,
+      "decimals": 2
+    },
+    {
+      "id": "s42.folds_with_test",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.bounded.folds_with_test_window",
+      "value": 17
+    },
+    {
+      "id": "s42.refit_folds",
+      "section": "§4.2 text",
+      "experiment": "grouping",
+      "key": "grouping.bounded.folds_without_test_window",
+      "value": 1
+    },
+    {
+      "id": "t5.min1_age24.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age24.clusters",
+      "value": 361365
+    },
+    {
+      "id": "t5.min1_age24.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age24.size_p99",
+      "value": 70
+    },
+    {
+      "id": "t5.min1_age24.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age24.singleton_share",
+      "value": 62.35,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min1_age24.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age24.btc.mean_series",
+      "value": 181.171,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min1_age24.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age24.eth.mean_series",
+      "value": 39.07,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min1_age48.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age48.clusters",
+      "value": 329473
+    },
+    {
+      "id": "t5.min1_age48.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age48.size_p99",
+      "value": 81
+    },
+    {
+      "id": "t5.min1_age48.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age48.singleton_share",
+      "value": 67.25,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min1_age48.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age48.btc.mean_series",
+      "value": 175.005,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min1_age48.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age48.eth.mean_series",
+      "value": 39.627,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min1_age72.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.clusters",
+      "value": 319088
+    },
+    {
+      "id": "t5.min1_age72.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.size_p99",
+      "value": 85
+    },
+    {
+      "id": "t5.min1_age72.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.singleton_share",
+      "value": 69.15,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min1_age72.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.btc.mean_series",
+      "value": 172.884,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min1_age72.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.eth.mean_series",
+      "value": 40.278,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age24.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.clusters",
+      "value": 728963
+    },
+    {
+      "id": "t5.min2_age24.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.size_p99",
+      "value": 23
+    },
+    {
+      "id": "t5.min2_age24.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.singleton_share",
+      "value": 72.99,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min2_age24.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.btc.mean_series",
+      "value": 339.231,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age24.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.eth.mean_series",
+      "value": 48.494,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age48.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age48.clusters",
+      "value": 692988
+    },
+    {
+      "id": "t5.min2_age48.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age48.size_p99",
+      "value": 26
+    },
+    {
+      "id": "t5.min2_age48.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age48.singleton_share",
+      "value": 75.75,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min2_age48.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age48.btc.mean_series",
+      "value": 332.545,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age48.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age48.eth.mean_series",
+      "value": 49.397,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age72.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age72.clusters",
+      "value": 682652
+    },
+    {
+      "id": "t5.min2_age72.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age72.size_p99",
+      "value": 27
+    },
+    {
+      "id": "t5.min2_age72.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age72.singleton_share",
+      "value": 76.66,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min2_age72.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age72.btc.mean_series",
+      "value": 330.618,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min2_age72.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age72.eth.mean_series",
+      "value": 49.994,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age24.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age24.clusters",
+      "value": 1103012
+    },
+    {
+      "id": "t5.min3_age24.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age24.size_p99",
+      "value": 14
+    },
+    {
+      "id": "t5.min3_age24.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age24.singleton_share",
+      "value": 77.53,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min3_age24.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age24.btc.mean_series",
+      "value": 502.644,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age24.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age24.eth.mean_series",
+      "value": 52.134,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age48.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age48.clusters",
+      "value": 1056671
+    },
+    {
+      "id": "t5.min3_age48.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age48.size_p99",
+      "value": 16
+    },
+    {
+      "id": "t5.min3_age48.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age48.singleton_share",
+      "value": 79.8,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min3_age48.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age48.btc.mean_series",
+      "value": 494.414,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age48.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age48.eth.mean_series",
+      "value": 52.444,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age72.clusters",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.clusters",
+      "value": 1042811
+    },
+    {
+      "id": "t5.min3_age72.size_p99",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.size_p99",
+      "value": 16
+    },
+    {
+      "id": "t5.min3_age72.singletons_pct",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.singleton_share",
+      "value": 80.54,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t5.min3_age72.btc_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.btc.mean_series",
+      "value": 491.932,
+      "decimals": 3
+    },
+    {
+      "id": "t5.min3_age72.eth_mean_24h",
+      "section": "Table 5",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.eth.mean_series",
+      "value": 52.762,
+      "decimals": 3
+    },
+    {
+      "id": "t5.records",
+      "section": "Table 5 caption",
+      "experiment": "sensitivity",
+      "key": "sensitivity.records",
+      "value": 2055263
+    },
+    {
+      "id": "s43.min2_age24.btc_mean_abs_diff",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24.btc.mean_abs_diff",
+      "value": 8.939,
+      "decimals": 3
+    },
+    {
+      "id": "s43.min1_age72.btc_mean_abs_diff",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min1_age72.btc.mean_abs_diff",
+      "value": 157.734,
+      "decimals": 3
+    },
+    {
+      "id": "s43.min3_age72.btc_mean_abs_diff",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72.btc.mean_abs_diff",
+      "value": 161.314,
+      "decimals": 3
+    },
+    {
+      "id": "s43.age24_cluster_increase",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24_minus_min2_age72.clusters",
+      "value": 46311
+    },
+    {
+      "id": "s43.age24_cluster_increase_pct",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24_minus_min2_age72.clusters_pct",
+      "value": 6.78,
+      "decimals": 2
+    },
+    {
+      "id": "s43.min3_over_min1_clusters",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min3_age72_over_min1_age72.clusters",
+      "value": 3.27,
+      "decimals": 2
+    },
+    {
+      "id": "s43.crossing_all_settings",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.all.crossing_clusters.max",
+      "value": 0
+    },
+    {
+      "id": "s43.size_median_min",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.all.size_median.min",
+      "value": 1
+    },
+    {
+      "id": "s43.size_median_max",
+      "section": "§4.3 text",
+      "experiment": "sensitivity",
+      "key": "sensitivity.all.size_median.max",
+      "value": 1
+    },
+    {
+      "id": "t6.row1.changed_hours",
+      "section": "Table 6 row 1",
+      "experiment": "features",
+      "key": "features.clock.btc.changed_hours",
+      "value": 47059
+    },
+    {
+      "id": "t6.row1.changed_pct",
+      "section": "Table 6 row 1",
+      "experiment": "features",
+      "key": "features.clock.btc.share",
+      "value": 81.6,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t6.row1.mean_abs_diff",
+      "section": "Table 6 row 1",
+      "experiment": "features",
+      "key": "features.clock.btc.mean_abs_diff",
+      "value": 2.574,
+      "decimals": 3
+    },
+    {
+      "id": "t6.row2.changed_hours",
+      "section": "Table 6 row 2",
+      "experiment": "features",
+      "key": "features.flag.btc.changed_hours",
+      "value": 9723
+    },
+    {
+      "id": "t6.row2.changed_pct",
+      "section": "Table 6 row 2",
+      "experiment": "features",
+      "key": "features.flag.btc.share",
+      "value": 16.86,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t6.row2.mean_abs_diff",
+      "section": "Table 6 row 2",
+      "experiment": "features",
+      "key": "features.flag.btc.mean_abs_diff",
+      "value": 0.198,
+      "decimals": 3
+    },
+    {
+      "id": "t6.row3.changed_hours",
+      "section": "Table 6 row 3",
+      "experiment": "features",
+      "key": "features.flag.eth.changed_hours",
+      "value": 54016
+    },
+    {
+      "id": "t6.row3.changed_pct",
+      "section": "Table 6 row 3",
+      "experiment": "features",
+      "key": "features.flag.eth.share",
+      "value": 93.66,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t6.row3.mean_abs_diff",
+      "section": "Table 6 row 3",
+      "experiment": "features",
+      "key": "features.flag.eth.mean_abs_diff",
+      "value": 5.001,
+      "decimals": 3
+    },
+    {
+      "id": "t6.row4.changed_hours",
+      "section": "Table 6 row 4",
+      "experiment": "grouping",
+      "key": "grouping.features.btc.changed_hours",
+      "value": 14980
+    },
+    {
+      "id": "t6.row4.changed_pct",
+      "section": "Table 6 row 4",
+      "experiment": "grouping",
+      "key": "grouping.features.btc.share",
+      "value": 25.97,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t6.row4.mean_abs_diff",
+      "section": "Table 6 row 4",
+      "experiment": "grouping",
+      "key": "grouping.features.btc.mean_abs_diff",
+      "value": 0.635,
+      "decimals": 3
+    },
+    {
+      "id": "t6.row5.changed_hours",
+      "section": "Table 6 row 5",
+      "experiment": "grouping",
+      "key": "grouping.features.eth.changed_hours",
+      "value": 10565
+    },
+    {
+      "id": "t6.row5.changed_pct",
+      "section": "Table 6 row 5",
+      "experiment": "grouping",
+      "key": "grouping.features.eth.share",
+      "value": 18.32,
+      "decimals": 2,
+      "scale": 100
+    },
+    {
+      "id": "t6.row5.mean_abs_diff",
+      "section": "Table 6 row 5",
+      "experiment": "grouping",
+      "key": "grouping.features.eth.mean_abs_diff",
+      "value": 0.31,
+      "decimals": 3
+    },
+    {
+      "id": "t6.hours",
+      "section": "Table 6 caption",
+      "experiment": "features",
+      "key": "features.hours",
+      "value": 57672
+    },
+    {
+      "id": "t6.hours_grouping",
+      "section": "Table 6 caption",
+      "experiment": "grouping",
+      "key": "grouping.hours",
+      "value": 57672
+    },
+    {
+      "id": "s44.btc.mean_final_flags",
+      "section": "§4.4 text",
+      "experiment": "features",
+      "key": "features.flag.btc.mean_series",
+      "value": 330.815,
+      "decimals": 3
+    },
+    {
+      "id": "s44.btc.mean_dated",
+      "section": "§4.4 text",
+      "experiment": "features",
+      "key": "features.flag.btc.mean_reference",
+      "value": 330.618,
+      "decimals": 3
+    },
+    {
+      "id": "s44.eth.mean_final_flags",
+      "section": "§4.4 text",
+      "experiment": "features",
+      "key": "features.flag.eth.mean_series",
+      "value": 54.995,
+      "decimals": 3
+    },
+    {
+      "id": "s44.eth.mean_dated",
+      "section": "§4.4 text",
+      "experiment": "features",
+      "key": "features.flag.eth.mean_reference",
+      "value": 49.994,
+      "decimals": 3
+    },
+    {
+      "id": "t7.1h.all.hours",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.all.hours",
+      "value": 57695
+    },
+    {
+      "id": "t7.1h.all.active",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.all.active",
+      "value": 56093
+    },
+    {
+      "id": "t7.1h.all.confirmed_quiet",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.all.confirmed_quiet",
+      "value": 86
+    },
+    {
+      "id": "t7.1h.all.unavailable",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.all.unavailable",
+      "value": 1044
+    },
+    {
+      "id": "t7.1h.all.partially_covered",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.all.partially_covered",
+      "value": 472
+    },
+    {
+      "id": "t7.1h.btc.hours",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.btc.hours",
+      "value": 57695
+    },
+    {
+      "id": "t7.1h.btc.active",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.btc.active",
+      "value": 56088
+    },
+    {
+      "id": "t7.1h.btc.confirmed_quiet",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.btc.confirmed_quiet",
+      "value": 91
+    },
+    {
+      "id": "t7.1h.btc.unavailable",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.btc.unavailable",
+      "value": 1044
+    },
+    {
+      "id": "t7.1h.btc.partially_covered",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.btc.partially_covered",
+      "value": 472
+    },
+    {
+      "id": "t7.1h.eth.hours",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.hours",
+      "value": 57695
+    },
+    {
+      "id": "t7.1h.eth.active",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.active",
+      "value": 45531
+    },
+    {
+      "id": "t7.1h.eth.confirmed_quiet",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.confirmed_quiet",
+      "value": 10648
+    },
+    {
+      "id": "t7.1h.eth.unavailable",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.unavailable",
+      "value": 1044
+    },
+    {
+      "id": "t7.1h.eth.partially_covered",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.partially_covered",
+      "value": 472
+    },
+    {
+      "id": "t7.24h.all.hours",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.24h.all.hours",
+      "value": 57672
+    },
+    {
+      "id": "t7.24h.all.active",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.24h.all.active",
+      "value": 53932
+    },
+    {
+      "id": "t7.24h.all.confirmed_quiet",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.24h.all.confirmed_quiet",
+      "value": 0
+    },
+    {
+      "id": "t7.24h.all.unavailable",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.24h.all.unavailable",
+      "value": 403
+    },
+    {
+      "id": "t7.24h.all.partially_covered",
+      "section": "Table 7",
+      "experiment": "coverage",
+      "key": "coverage.24h.all.partially_covered",
+      "value": 3337
+    },
+    {
+      "id": "s45.eth_quiet_pct",
+      "section": "§4.5 text",
+      "experiment": "coverage",
+      "key": "coverage.1h.eth.confirmed_quiet_pct",
+      "value": 18.46,
+      "decimals": 2
+    },
+    {
+      "id": "s45.24h_extra_excluded",
+      "section": "§4.5 text",
+      "experiment": "coverage",
+      "key": "coverage.24h_minus_1h.all.excluded_leading",
+      "value": 23
+    },
+    {
+      "id": "t8.BTCUSDT.4h.eligible",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.4h.eligible",
+      "value": 57692
+    },
+    {
+      "id": "t8.BTCUSDT.4h.defined",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.4h.defined",
+      "value": 57622
+    },
+    {
+      "id": "t8.BTCUSDT.4h.missing",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.4h.missing",
+      "value": 70
+    },
+    {
+      "id": "t8.BTCUSDT.4h.defined_pct",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.4h.defined_pct",
+      "value": 99.879,
+      "decimals": 3
+    },
+    {
+      "id": "t8.BTCUSDT.24h.eligible",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.24h.eligible",
+      "value": 57672
+    },
+    {
+      "id": "t8.BTCUSDT.24h.defined",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.24h.defined",
+      "value": 57602
+    },
+    {
+      "id": "t8.BTCUSDT.24h.missing",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.24h.missing",
+      "value": 70
+    },
+    {
+      "id": "t8.BTCUSDT.24h.defined_pct",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "BTCUSDT.24h.defined_pct",
+      "value": 99.879,
+      "decimals": 3
+    },
+    {
+      "id": "t8.ETHUSDT.4h.eligible",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.4h.eligible",
+      "value": 57692
+    },
+    {
+      "id": "t8.ETHUSDT.4h.defined",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.4h.defined",
+      "value": 57622
+    },
+    {
+      "id": "t8.ETHUSDT.4h.missing",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.4h.missing",
+      "value": 70
+    },
+    {
+      "id": "t8.ETHUSDT.4h.defined_pct",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.4h.defined_pct",
+      "value": 99.879,
+      "decimals": 3
+    },
+    {
+      "id": "t8.ETHUSDT.24h.eligible",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.24h.eligible",
+      "value": 57672
+    },
+    {
+      "id": "t8.ETHUSDT.24h.defined",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.24h.defined",
+      "value": 57602
+    },
+    {
+      "id": "t8.ETHUSDT.24h.missing",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.24h.missing",
+      "value": 70
+    },
+    {
+      "id": "t8.ETHUSDT.24h.defined_pct",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "ETHUSDT.24h.defined_pct",
+      "value": 99.879,
+      "decimals": 3
+    },
+    {
+      "id": "t8.total.eligible",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "total.eligible",
+      "value": 230728
+    },
+    {
+      "id": "t8.total.defined",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "total.defined",
+      "value": 230448
+    },
+    {
+      "id": "t8.total.missing",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "total.missing",
+      "value": 280
+    },
+    {
+      "id": "t8.total.defined_pct",
+      "section": "Table 8",
+      "experiment": "targets",
+      "key": "total.defined_pct",
+      "value": 99.879,
+      "decimals": 3
+    },
+    {
+      "id": "s45.missing_entry_too_late",
+      "section": "§4.5 text",
+      "experiment": "targets",
+      "key": "total.missing.entry_too_late",
+      "value": 280
+    },
+    {
+      "id": "s45.slots_requested",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.slots",
+      "value": 265824
+    },
+    {
+      "id": "s45.slots_retained",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.status.retained",
+      "value": 247095
+    },
+    {
+      "id": "s45.slots_retained_pct",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.pct.retained",
+      "value": 92.954,
+      "decimals": 3
+    },
+    {
+      "id": "s45.slots_no_match",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.status.served_no_match",
+      "value": 13579
+    },
+    {
+      "id": "s45.slots_no_match_pct",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.pct.served_no_match",
+      "value": 5.108,
+      "decimals": 3
+    },
+    {
+      "id": "s45.slots_missing",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.status.missing_source",
+      "value": 5150
+    },
+    {
+      "id": "s45.slots_missing_pct",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.pct.missing_source",
+      "value": 1.937,
+      "decimals": 3
+    },
+    {
+      "id": "s45.retry_entries",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.retry_lines",
+      "value": 21
+    },
+    {
+      "id": "s45.slots_served",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.served",
+      "value": 260674
+    },
+    {
+      "id": "s45.dev.entries",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.lines",
+      "value": 230805
+    },
+    {
+      "id": "s45.dev.slots",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.slots",
+      "value": 230784
+    },
+    {
+      "id": "s45.dev.rows_scanned",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.rows_total",
+      "value": 335078226
+    },
+    {
+      "id": "s45.dev.matches",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.rows_matched",
+      "value": 2055318
+    },
+    {
+      "id": "s45.dev.duplicates",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.rows_duplicate_in_slot",
+      "value": 55
+    },
+    {
+      "id": "s45.dev.retained",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.records_retained",
+      "value": 2055263
+    },
+    {
+      "id": "s45.dev.accounting_identity",
+      "section": "§4.5 text",
+      "experiment": "descriptive",
+      "key": "ledger.dev.identity_matched_minus_duplicates_equals_retained",
+      "value": true
+    },
+    {
+      "id": "s45.example.bar_close_time",
+      "section": "§4.5 text",
+      "experiment": "example",
+      "key": "example.bar.close_time",
+      "value": "2023-10-18T11:59:59.999+00:00"
+    },
+    {
+      "id": "s45.example.bar_close",
+      "section": "§4.5 text",
+      "experiment": "example",
+      "key": "example.bar.close",
+      "value": 28340.64,
+      "decimals": 2
+    },
+    {
+      "id": "s45.example.news_records",
+      "section": "§4.5 text",
+      "experiment": "example",
+      "key": "example.news.records",
+      "value": 49
+    },
+    {
+      "id": "s45.example.news_clusters",
+      "section": "§4.5 text",
+      "experiment": "example",
+      "key": "example.news.clusters",
+      "value": 30
+    },
+    {
+      "id": "s45.example.next_release_date",
+      "section": "§4.5 text",
+      "experiment": "example",
+      "key": "example.next_release.date",
+      "value": "2023-11-01"
+    },
+    {
+      "id": "s45.agreement.btc.deployed.kappa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.btc.deployed.kappa",
+      "value": 0.00462,
+      "decimals": 5
+    },
+    {
+      "id": "s45.agreement.btc.deployed.psa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.btc.deployed.psa",
+      "value": 0.10943,
+      "decimals": 5
+    },
+    {
+      "id": "s45.agreement.btc.corrected.kappa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.btc.corrected.kappa",
+      "value": -0.00127,
+      "decimals": 5
+    },
+    {
+      "id": "s45.agreement.btc.corrected.psa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.btc.corrected.psa",
+      "value": 0.13383,
+      "decimals": 5
+    },
+    {
+      "id": "s45.agreement.eth.deployed.kappa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.eth.deployed.kappa",
+      "value": null
+    },
+    {
+      "id": "s45.agreement.eth.corrected.kappa",
+      "section": "§4.5 text",
+      "experiment": "agreement",
+      "key": "agreement.eth.corrected.kappa",
+      "value": null
+    }
+  ],
+  "supplementary": [
+    {
+      "id": "sup.cluster_size_mean",
+      "section": "supplementary (not in the article text)",
+      "experiment": "descriptive",
+      "key": "cluster_shape.size.mean",
+      "value": 3.011,
+      "decimals": 3
+    },
+    {
+      "id": "sup.cluster_size_max",
+      "section": "supplementary (not in the article text)",
+      "experiment": "descriptive",
+      "key": "cluster_shape.size.max",
+      "value": 3177
+    },
+    {
+      "id": "sup.distinct_domains",
+      "section": "supplementary (not in the article text)",
+      "experiment": "descriptive",
+      "key": "cluster_shape.distinct_domains",
+      "value": 15675
+    },
+    {
+      "id": "sup.domains_per_cluster_mean",
+      "section": "supplementary (not in the article text)",
+      "experiment": "descriptive",
+      "key": "cluster_shape.domains.mean",
+      "value": 2.04,
+      "decimals": 3
+    }
+  ],
+  "not_reproducible": [
+    {
+      "section": "Table 4; §4.2",
+      "result": "grouping execution time, 382.2 s unbounded and 369.3 s bounded"
+    },
+    {
+      "section": "§4.5",
+      "result": "replay time 426.6 s and 427.5 s, peak memory 1,155.7 MiB and 1,058.8 MiB"
+    },
+    {
+      "section": "§4.5",
+      "result": "eleven grouping and sensitivity runs, 4,406.7 s in total, 264.6–464.4 s per setting, peak memory about 1,774 MiB"
+    },
+    {
+      "section": "§4.5",
+      "result": "diagnostic access incidents: 56 boundary-crossing target rows and 35,096 out-of-scope outcome rows"
+    },
+    {
+      "section": "§4.5",
+      "result": "seven synthetic access-control cases of the diagnostic target reader"
+    },
+    {
+      "section": "§4.5",
+      "result": "repeatability of the diagnostic outputs: 11 of 16 files byte-identical"
+    },
+    {
+      "section": "§4.5",
+      "result": "freeze-manifest check of 22 named input artifacts and 400 sampled of 213,561 raw shards"
+    },
+    {
+      "section": "§4.5",
+      "result": "backup and recovery checks: 833 restored objects with 347 manifests; digests for 3,077 of 56,727 objects (5.42%)"
+    },
+    {
+      "section": "§4.5",
+      "result": "model-assisted second annotation pass and the page audit (126 of 240 pages retrieved)"
+    },
+    {
+      "section": "§4.5",
+      "result": "reconciliation with the earlier news generation (2,259,556 common, 27,418 earlier-only, 61,395 revised-only records): the earlier generation is not in the released dataset"
+    },
+    {
+      "section": "§4.1",
+      "result": "cluster 20200414200000-1576 of the earlier news generation, which is not in the released dataset"
+    }
+  ]
+}
