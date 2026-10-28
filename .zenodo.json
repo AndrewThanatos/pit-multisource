@@ -1,0 +1,40 @@
+{
+  "title": "pit-multisource: point-in-time construction of a multisource dataset and reproduction of the article's results",
+  "description": "Python package that rebuilds the point-in-time multisource dataset of Binance BTC/ETH bars, GDELT GKG news metadata and US release calendars from its sources, and reproduces the numbers of the article \"Point-in-Time Consistency for Multisource Time-Series Data: A Formal Model and Construction Method for Evolving News Metadata\" (Journal of Big Data) from the released dataset. Every released table except the raw GKG records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity builds start from the released raw GKG records and the source-domain build from the released news records.",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Berezhniuk, Andrii",
+      "orcid": "0000-0002-9072-2976",
+      "affiliation": "National Technical University of Ukraine \"Igor Sikorsky Kyiv Polytechnic Institute\""
+    }
+  ],
+  "keywords": [
+    "multisource time series",
+    "point-in-time consistency",
+    "historical invariance",
+    "temporal data model",
+    "record availability",
+    "evolving news metadata",
+    "chronological clustering",
+    "historical state reconstruction",
+    "data leakage",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1186/ARTICLE",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.DATASET",
+      "relation": "references",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the article it accompanies (listed under references)."
+type: software
+title: "pit-multisource: point-in-time construction of a multisource dataset and reproduction of the article's results"
+abstract: >-
+  Rebuilds the point-in-time multisource dataset of Binance BTC/ETH bars, GDELT GKG news metadata
+  and US release calendars from its sources, and reproduces the numbers of the article
+  "Point-in-Time Consistency for Multisource Time-Series Data" from the released dataset. Every released table except the raw GKG records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity builds start from the released raw GKG records and the source-domain build from the released news records.
+version: "1.0.0"
+doi: 10.5281/zenodo.CODE
+license: MIT
+repository-code: "https://github.com/AndrewThanatos/pit-multisource"
+authors:
+  - family-names: Berezhniuk
+    given-names: Andrii
+    orcid: "https://orcid.org/0000-0002-9072-2976"
+    affiliation: 'National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"'
+keywords:
+  - multisource time series
+  - point-in-time consistency
+  - historical invariance
+  - temporal data model
+  - record availability
+  - evolving news metadata
+  - chronological clustering
+  - historical state reconstruction
+  - data leakage
+  - reproducibility
+references:
+  - type: article
+    title: "Point-in-Time Consistency for Multisource Time-Series Data: A Formal Model and Construction Method for Evolving News Metadata"
+    journal: "Journal of Big Data"
+    year: 2026
+    doi: 10.1186/ARTICLE
+    authors:
+      - family-names: Shymkovych
+        given-names: Volodymyr
+        orcid: "https://orcid.org/0000-0003-4014-2786"
+      - family-names: Berezhniuk
+        given-names: Andrii
+        orcid: "https://orcid.org/0000-0002-9072-2976"
+      - family-names: Telenyk
+        given-names: Sergii
+        orcid: "https://orcid.org/0000-0001-9202-9406"
+      - family-names: Nowakowski
+        given-names: Grzegorz
+        orcid: "https://orcid.org/0000-0002-3086-0947"
+  - type: dataset
+    title: "Point-in-time multisource dataset: Binance BTC/ETH, GDELT GKG news metadata and US release calendars, 2019-2026"
+    version: "1.0.0"
+    publisher:
+      name: Zenodo
+    year: 2026
+    doi: 10.5281/zenodo.DATASET
+    license: CC-BY-NC-SA-4.0
+    authors:
+      - family-names: Shymkovych
+        given-names: Volodymyr
+        orcid: "https://orcid.org/0000-0003-4014-2786"
+      - family-names: Berezhniuk
+        given-names: Andrii
+        orcid: "https://orcid.org/0000-0002-9072-2976"
+      - family-names: Telenyk
+        given-names: Sergii
+        orcid: "https://orcid.org/0000-0001-9202-9406"
+      - family-names: Nowakowski
+        given-names: Grzegorz
+        orcid: "https://orcid.org/0000-0002-3086-0947"
