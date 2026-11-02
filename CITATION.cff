@@ -13,7 +13,7 @@ repository-code: "https://github.com/AndrewThanatos/pit-multisource"
 authors:
   - family-names: Berezhniuk
     given-names: Andrii
-    orcid: "https://orcid.org/0000-0002-9072-2976"
+    orcid: "https://orcid.org/0009-0003-4581-2520"
     affiliation: 'National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"'
 keywords:
   - multisource time series
@@ -37,7 +37,7 @@ references:
         orcid: "https://orcid.org/0000-0003-4014-2786"
       - family-names: Berezhniuk
         given-names: Andrii
-        orcid: "https://orcid.org/0000-0002-9072-2976"
+        orcid: "https://orcid.org/0009-0003-4581-2520"
       - family-names: Telenyk
         given-names: Sergii
         orcid: "https://orcid.org/0000-0001-9202-9406"
@@ -55,4 +55,4 @@ references:
     authors:
       - family-names: Berezhniuk
         given-names: Andrii
-        orcid: "https://orcid.org/0000-0002-9072-2976"
+        orcid: "https://orcid.org/0009-0003-4581-2520"

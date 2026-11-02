@@ -23,7 +23,7 @@ ARTICLE_TITLE = (
     " Method for Evolving News Metadata"
 )
 ARTICLE_AUTHORS = ["Shymkovych", "Berezhniuk", "Telenyk", "Nowakowski"]
-ORCID = "0000-0002-9072-2976"
+ORCID = "0009-0003-4581-2520"
 AFFILIATION = 'National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"'
 
 CODE_DOI = "10.5281/zenodo.23886257"
