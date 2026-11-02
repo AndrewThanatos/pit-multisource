@@ -54,15 +54,6 @@ references:
     doi: 10.5281/zenodo.DATASET
     license: CC-BY-NC-SA-4.0
     authors:
-      - family-names: Shymkovych
-        given-names: Volodymyr
-        orcid: "https://orcid.org/0000-0003-4014-2786"
       - family-names: Berezhniuk
         given-names: Andrii
         orcid: "https://orcid.org/0000-0002-9072-2976"
-      - family-names: Telenyk
-        given-names: Sergii
-        orcid: "https://orcid.org/0000-0001-9202-9406"
-      - family-names: Nowakowski
-        given-names: Grzegorz
-        orcid: "https://orcid.org/0000-0002-3086-0947"

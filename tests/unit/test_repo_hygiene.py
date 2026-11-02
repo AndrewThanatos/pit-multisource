@@ -201,7 +201,7 @@ def test_citation_cff_fields():
     assert article["journal"] == "Journal of Big Data"
     assert [a["family-names"] for a in article["authors"]] == ARTICLE_AUTHORS
     assert (dataset["type"], dataset["doi"]) == ("dataset", "10.5281/zenodo.DATASET")
-    assert [a["family-names"] for a in dataset["authors"]] == ARTICLE_AUTHORS
+    assert [a["family-names"] for a in dataset["authors"]] == ["Berezhniuk"]
 
 
 def test_zenodo_json_fields():

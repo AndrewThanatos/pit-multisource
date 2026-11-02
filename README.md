@@ -298,8 +298,8 @@ dataset as well. [`CITATION.cff`](CITATION.cff) holds the same information.
   year         = {2026}
 }
 
-@misc{shymkovych2026pitdata,
-  author       = {Shymkovych, Volodymyr and Berezhniuk, Andrii and Telenyk, Sergii and Nowakowski, Grzegorz},
+@misc{berezhniuk2026pitdata,
+  author       = {Berezhniuk, Andrii},
   title        = {Point-in-time multisource dataset: Binance BTC/ETH, GDELT GKG news metadata and US release
                   calendars, 2019--2026},
   howpublished = {Zenodo, dataset},
