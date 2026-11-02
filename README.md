@@ -62,9 +62,12 @@ polars 2.1 and later within major version 2.
 ## Quick start
 
 Download the dataset from Zenodo ([DOI 10.5281/zenodo.23886186](https://doi.org/10.5281/zenodo.23886186),
-about 6.4 GB, of which 6.12 GB are the full 27-field GKG records) and unpack it, for example into
-`pit-multisource-v1.0.0/`. Then ask what was knowable at 2023-10-18 12:00 UTC, the article's worked
-example (Section 4.5):
+about 6.4 GB, of which 6.12 GB are the full 27-field GKG records, one zip archive per year). The data
+come as zip archives by part; unpack the ones you need into one folder, for example
+`pit-multisource-v1.0.0/`. The example needs only `market.zip`, `news.zip` and `calendar.zip`;
+`reproduce` needs every archive (the raw GKG archives for replay, the grouping comparison, sensitivity and
+agreement, and `diagnostics.zip` for the Table 2 counts). Then ask what was knowable at 2023-10-18 12:00 UTC,
+the article's worked example (Section 4.5):
 
 ```bash
 pit-multisource example --dataset pit-multisource-v1.0.0
