@@ -1,7 +1,7 @@
 # pit-multisource
 
-[![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.CODE.svg)](https://doi.org/10.5281/zenodo.CODE)
-[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.DATASET.svg)](https://doi.org/10.5281/zenodo.DATASET)
+[![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23886257.svg)](https://doi.org/10.5281/zenodo.23886257)
+[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23886186.svg)](https://doi.org/10.5281/zenodo.23886186)
 [![tests](https://github.com/AndrewThanatos/pit-multisource/actions/workflows/tests.yml/badge.svg)](https://github.com/AndrewThanatos/pit-multisource/actions/workflows/tests.yml)
 
 Builds a point-in-time dataset of Bitcoin and Ether prices, GDELT news metadata and US release
@@ -11,7 +11,7 @@ Time-Series Data: A Formal Model and Construction Method for Evolving News Metad
 
 "Point in time" means that every row keeps the timestamps needed to decide what was knowable at a
 given moment, so historical inputs can be assembled without information that arrived later. The
-released dataset is on Zenodo ([DOI 10.5281/zenodo.DATASET](https://doi.org/10.5281/zenodo.DATASET));
+released dataset is on Zenodo ([DOI 10.5281/zenodo.23886186](https://doi.org/10.5281/zenodo.23886186));
 this repository is the code that built it and the code that recomputes the article's tables from it.
 
 Rewritten from the research codebase used for the article. Every released table except the raw GKG
@@ -61,7 +61,7 @@ polars 2.1 and later within major version 2.
 
 ## Quick start
 
-Download the dataset from Zenodo ([DOI 10.5281/zenodo.DATASET](https://doi.org/10.5281/zenodo.DATASET),
+Download the dataset from Zenodo ([DOI 10.5281/zenodo.23886186](https://doi.org/10.5281/zenodo.23886186),
 about 6.4 GB, of which 6.12 GB are the full 27-field GKG records) and unpack it, for example into
 `pit-multisource-v1.0.0/`. Then ask what was knowable at 2023-10-18 12:00 UTC, the article's worked
 example (Section 4.5):
@@ -103,7 +103,7 @@ pit-multisource reproduce --dataset pit-multisource-v1.0.0 \
 
 `shared_record_ids.parquet` lists the 2,003,579 records shared by the released news corpus and the
 earlier corpus that Table 4, Table 6 (rows 4–5), §3.6 and §4.2 compare on. It is in `inputs/` of the
-Materials record ([DOI 10.5281/zenodo.MATERIALS](https://doi.org/10.5281/zenodo.MATERIALS)). Without `--shared-ids`
+Materials record ([DOI 10.5281/zenodo.23886238](https://doi.org/10.5281/zenodo.23886238)). Without `--shared-ids`
 the whole `grouping` experiment (those 42 entries) is reported as skipped and the rest still runs.
 
 The command writes `results/<experiment>.json` (change with `--out`), prints the comparison, and
@@ -216,7 +216,7 @@ Things to know before rebuilding:
 
 Some results in the article are records of what happened in the original runs, not something code
 can recompute from the released data. They are documented in the Materials record
-([DOI 10.5281/zenodo.MATERIALS](https://doi.org/10.5281/zenodo.MATERIALS)), and `reproduce` lists
+([DOI 10.5281/zenodo.23886238](https://doi.org/10.5281/zenodo.23886238)), and `reproduce` lists
 them at the end of every run:
 
 - run times and memory of the article's experiments (Table 4, §4.5); the times above are this
@@ -284,7 +284,6 @@ dataset as well. [`CITATION.cff`](CITATION.cff) holds the same information.
   title   = {Point-in-Time Consistency for Multisource Time-Series Data: A Formal Model and Construction
              Method for Evolving News Metadata},
   journal = {Journal of Big Data},
-  doi     = {10.1186/ARTICLE},
   year    = {2026}
 }
 
@@ -294,7 +293,7 @@ dataset as well. [`CITATION.cff`](CITATION.cff) holds the same information.
                   of the article's results},
   howpublished = {Zenodo, software},
   version      = {1.0.0},
-  doi          = {10.5281/zenodo.CODE},
+  doi          = {10.5281/zenodo.23886257},
   year         = {2026}
 }
 
@@ -304,7 +303,7 @@ dataset as well. [`CITATION.cff`](CITATION.cff) holds the same information.
                   calendars, 2019--2026},
   howpublished = {Zenodo, dataset},
   version      = {1.0.0},
-  doi          = {10.5281/zenodo.DATASET},
+  doi          = {10.5281/zenodo.23886186},
   year         = {2026}
 }
 ```

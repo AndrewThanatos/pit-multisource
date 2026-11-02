@@ -7,7 +7,7 @@ abstract: >-
   and US release calendars from its sources, and reproduces the numbers of the article
   "Point-in-Time Consistency for Multisource Time-Series Data" from the released dataset. Every released table except the raw GKG records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity builds start from the released raw GKG records and the source-domain build from the released news records.
 version: "1.0.0"
-doi: 10.5281/zenodo.CODE
+doi: 10.5281/zenodo.23886257
 license: MIT
 repository-code: "https://github.com/AndrewThanatos/pit-multisource"
 authors:
@@ -31,7 +31,6 @@ references:
     title: "Point-in-Time Consistency for Multisource Time-Series Data: A Formal Model and Construction Method for Evolving News Metadata"
     journal: "Journal of Big Data"
     year: 2026
-    doi: 10.1186/ARTICLE
     authors:
       - family-names: Shymkovych
         given-names: Volodymyr
@@ -51,7 +50,7 @@ references:
     publisher:
       name: Zenodo
     year: 2026
-    doi: 10.5281/zenodo.DATASET
+    doi: 10.5281/zenodo.23886186
     license: CC-BY-NC-SA-4.0
     authors:
       - family-names: Berezhniuk

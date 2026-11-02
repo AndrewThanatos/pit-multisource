@@ -25,13 +25,13 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "10.1186/ARTICLE",
-      "relation": "isSupplementTo",
-      "resource_type": "publication-article",
+      "identifier": "10.5281/zenodo.23886186",
+      "relation": "references",
+      "resource_type": "dataset",
       "scheme": "doi"
     },
     {
-      "identifier": "10.5281/zenodo.DATASET",
+      "identifier": "10.5281/zenodo.23886238",
       "relation": "references",
       "resource_type": "dataset",
       "scheme": "doi"

@@ -26,14 +26,9 @@ ARTICLE_AUTHORS = ["Shymkovych", "Berezhniuk", "Telenyk", "Nowakowski"]
 ORCID = "0000-0002-9072-2976"
 AFFILIATION = 'National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"'
 
-# DOIs that do not exist yet, and the files that carry each one. Once the records are published,
-# replace every placeholder with its DOI and empty this map.
-PLACEHOLDER_FILES = {
-    "10.1186/ARTICLE": {"README.md", "CITATION.cff", ".zenodo.json"},
-    "10.5281/zenodo.CODE": {"README.md", "CITATION.cff"},
-    "10.5281/zenodo.DATASET": {"README.md", "CITATION.cff", ".zenodo.json"},
-    "10.5281/zenodo.MATERIALS": {"README.md"},
-}
+CODE_DOI = "10.5281/zenodo.23886257"
+DATASET_DOI = "10.5281/zenodo.23886186"
+MATERIALS_DOI = "10.5281/zenodo.23886238"
 PLACEHOLDER = re.compile(r"\b10\.\d{4,9}/(?:zenodo\.)?[A-Z]{4,}\b")
 
 # Stored in ROT13 so that this file does not contain the terms it looks for.
@@ -187,7 +182,7 @@ def test_citation_cff_fields():
     assert cff["type"] == "software"
     assert cff["license"] == "MIT"
     assert cff["version"] == project["version"]
-    assert cff["doi"] == "10.5281/zenodo.CODE"
+    assert cff["doi"] == CODE_DOI
     assert cff["authors"] == [
         {
             "family-names": "Berezhniuk",
@@ -200,7 +195,8 @@ def test_citation_cff_fields():
     assert (article["type"], article["title"]) == ("article", ARTICLE_TITLE)
     assert article["journal"] == "Journal of Big Data"
     assert [a["family-names"] for a in article["authors"]] == ARTICLE_AUTHORS
-    assert (dataset["type"], dataset["doi"]) == ("dataset", "10.5281/zenodo.DATASET")
+    assert (dataset["type"], dataset["doi"]) == ("dataset", DATASET_DOI)
+    assert "doi" not in article
     assert [a["family-names"] for a in dataset["authors"]] == ["Berezhniuk"]
 
 
@@ -217,15 +213,13 @@ def test_zenodo_json_fields():
     assert meta["keywords"] == cff["keywords"]
     relations = {(r["relation"], r["identifier"]) for r in meta["related_identifiers"]}
     assert relations == {
-        ("isSupplementTo", "10.1186/ARTICLE"),
-        ("references", "10.5281/zenodo.DATASET"),
+        ("references", DATASET_DOI),
+        ("references", MATERIALS_DOI),
     }
 
 
-def test_doi_placeholders_are_listed():
-    found: dict[str, set[str]] = {}
-    for name, text in repo_files().items():
-        if name != THIS_FILE:
-            for match in PLACEHOLDER.finditer(text):
-                found.setdefault(match.group(), set()).add(name)
-    assert found == PLACEHOLDER_FILES
+def test_no_doi_placeholders_remain_and_real_dois_are_used():
+    files = {name: text for name, text in repo_files().items() if name != THIS_FILE}
+    assert not [name for name, text in files.items() if PLACEHOLDER.search(text)]
+    assert CODE_DOI in files["README.md"] and DATASET_DOI in files["README.md"]
+    assert MATERIALS_DOI in files["README.md"]
