@@ -20,6 +20,8 @@ def test_replay_checks(dataset_root: Path):
     assert result["replay.rebuild.records"] == 2_055_263
     assert result["replay.rebuild.clusters"] == 682_652
     assert result["replay.rebuild.url_joins_refused_by_age_cap"] == 3_639
+    assert result["replay.example.opened_at"] == "2019-01-01T00:00:00+00:00"
+    assert result["replay.example.eth_earned_at"] == "2019-01-03T17:45:00+00:00"
 
     assert result["slice.records"] == 59_822
     assert result["slice.clusters.rebuilt"] == 24_319

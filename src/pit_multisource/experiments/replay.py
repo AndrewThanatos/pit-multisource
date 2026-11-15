@@ -8,7 +8,8 @@ end, the released cluster table under the dated flags, and the released table un
 flags (each flag shown from the opening), which must disagree. Keys of the returned dict are
 `replay.*` (cutoff counts, route agreement, rebuild size), `slice.*` (the first quarter of 2019
 rebuilt on its own against the released assignment), `assignment.*` (the development assignment
-comparison counters) and `controls.*` (the comparison on five planted defects and one clean copy).
+comparison counters), `controls.*` (the comparison on five planted defects and one clean copy) and
+`replay.example.*` (the §4.1 cluster whose Ether flag was earned after its opening).
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ from pit_multisource.config import Config
 from pit_multisource.pit.availability import SLOT_LENGTH, flags_state_as_of
 
 SLICE_END = datetime(2019, 4, 1, tzinfo=UTC)
+DELAYED_FLAG_EXAMPLE = "20190101000000-996"
 FLAG_COLUMNS = ("btc_relevant_earned_at", "eth_relevant_earned_at")
 _EPOCH = datetime(1970, 1, 1, tzinfo=UTC)
 _MICRO = timedelta(microseconds=1)
@@ -231,6 +233,9 @@ def run_replay(dataset_root: Path, config: Config) -> dict[str, int | bool]:
     out["replay.rebuild.records"] = rebuilt.records.height
     out["replay.rebuild.clusters"] = rebuilt.clusters.height
     out["replay.rebuild.url_joins_refused_by_age_cap"] = rebuilt.url_joins_refused_by_age_cap
+    example = released.filter(pl.col("cluster_id") == DELAYED_FLAG_EXAMPLE).row(0, named=True)
+    out["replay.example.opened_at"] = example["opened_at"].isoformat()
+    out["replay.example.eth_earned_at"] = example["eth_relevant_earned_at"].isoformat()
 
     in_slice = pl.col("slot_time") < SLICE_END
     piece = build_news(records.filter(in_slice), config)

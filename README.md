@@ -145,7 +145,7 @@ memory of 13.8 GB, reached by the `inputs` check, which holds both routes' state
 | Experiment | Article result | Numbers | Time |
 |---|---|---:|---:|
 | `sizes` | Table 2 (table sizes) | 10 | 0.0 s |
-| `replay` | Table 3 (historical replay against reconstruction), §4.1 | 23 | 116.8 s |
+| `replay` | Table 3 (historical replay against reconstruction), §4.1 | 25 | 116.8 s |
 | `inputs` | the full historical input built by two routes at the 207 replay cutoffs, both assets | 0 + 12 supplementary | 287.7 s |
 | `grouping` | Table 4 (bounded and unbounded grouping), Table 6 rows 4–5, §3.6, §4.2 | 42 | 498.8 s |
 | `sensitivity` | Table 5 (nine clustering settings), §4.3 | 54 + 1 supplementary | 1,499.5 s |

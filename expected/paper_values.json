@@ -247,6 +247,20 @@
       "decimals": 2
     },
     {
+      "id": "s41.example.opened_at",
+      "section": "§4.1 text",
+      "experiment": "replay",
+      "key": "replay.example.opened_at",
+      "value": "2019-01-01T00:00:00+00:00"
+    },
+    {
+      "id": "s41.example.eth_earned_at",
+      "section": "§4.1 text",
+      "experiment": "replay",
+      "key": "replay.example.eth_earned_at",
+      "value": "2019-01-03T17:45:00+00:00"
+    },
+    {
       "id": "t4.unbounded.clusters",
       "section": "Table 4",
       "experiment": "grouping",
