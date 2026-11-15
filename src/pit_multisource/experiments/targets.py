@@ -1,4 +1,8 @@
-"""Table 8: how many 4 h / 24 h targets of the diagnostic period are eligible and defined."""
+"""Table 8: how many 4 h / 24 h targets of the diagnostic period are eligible and defined.
+
+`total.read.*` checks the reads: bars opening at or after the boundary that were read (0 when
+the reader works), outcome rows the reader returned and how many of them are undefined.
+"""
 
 from __future__ import annotations
 
@@ -14,6 +18,7 @@ from pit_multisource.build.targets import (
     build_targets,
     eligible,
     read_bars,
+    read_outcomes,
 )
 from pit_multisource.config import Config
 
@@ -29,10 +34,15 @@ def run_targets(dataset_root: Path, config: Config) -> dict[str, int | float]:
     boundary = config.targets.boundary
     counts: dict[str, int | float] = {}
     totals = dict.fromkeys(("candidates", "eligible", "defined", "missing"), 0)
+    reads = dict.fromkeys(("bars_at_or_after_boundary", "outcomes", "outcomes_undefined"), 0)
     for symbol in config.bars.symbols:
         bars = read_bars(bars_path(dataset_root, symbol), boundary)
+        reads["bars_at_or_after_boundary"] += bars.filter(pl.col("open_time") >= boundary).height
         targets = build_targets(bars, symbol, config.targets, boundary)
         admitted = eligible(targets, config.targets, boundary)
+        outcomes = read_outcomes(targets, config.targets, boundary)
+        reads["outcomes"] += outcomes.height
+        reads["outcomes_undefined"] += outcomes["log_return"].null_count()
         for hours in config.targets.horizon_hours:
             horizon = f"{hours}h"
             cell = admitted.filter(pl.col("horizon") == horizon)
@@ -54,4 +64,5 @@ def run_targets(dataset_root: Path, config: Config) -> dict[str, int | float]:
     for name, value in totals.items():
         counts[f"total.{name}"] = value
     counts["total.defined_pct"] = _percent(totals["defined"], totals["eligible"])
+    counts |= {f"total.read.{name}": value for name, value in reads.items()}
     return counts

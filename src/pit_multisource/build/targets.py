@@ -180,6 +180,25 @@ def eligible(targets: pl.DataFrame, config: TargetsConfig, boundary: datetime) -
     return targets.filter(exposure_end(config) < boundary)
 
 
+OUTCOME_KEY = ("symbol", "decision_time", "horizon")
+
+
+def read_outcomes(
+    targets: pl.DataFrame,
+    config: TargetsConfig,
+    boundary: datetime,
+    keys: pl.DataFrame | None = None,
+) -> pl.DataFrame:
+    """Outcomes of the eligible rows only; a requested key outside them is refused, not dropped."""
+    allowed = eligible(targets, config, boundary)
+    if keys is not None:
+        stray = keys.select(OUTCOME_KEY).join(allowed, on=list(OUTCOME_KEY), how="anti")
+        if stray.height:
+            raise PermissionError(f"{stray.height} requested key(s) are not eligible at {boundary}")
+        allowed = allowed.join(keys.select(OUTCOME_KEY), on=list(OUTCOME_KEY), how="semi")
+    return allowed.select(*OUTCOME_KEY, "log_return", "label_availability_time")
+
+
 def bars_path(dataset_root: Path, symbol: str) -> Path:
     return dataset_root / "market" / f"{symbol.lower()}_1m.parquet"
 

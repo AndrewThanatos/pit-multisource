@@ -177,9 +177,10 @@ def test_run_targets_counts(tmp_path):
         for point in _minute_bars(B - 48 * H, B)
         if not B - 38 * H <= point[0] < B - 38 * H + 7 * M
     ]
+    after_boundary = _minute_bars(B, B + 2 * H)
     (tmp_path / "market").mkdir()
     for name in ("btcusdt", "ethusdt"):
-        _bars(bars).write_parquet(tmp_path / "market" / f"{name}_1m.parquet")
+        _bars(bars + after_boundary).write_parquet(tmp_path / "market" / f"{name}_1m.parquet")
 
     counts = run_targets(tmp_path, load_config())
 
@@ -192,3 +193,6 @@ def test_run_targets_counts(tmp_path):
     assert counts["ETHUSDT.24h.defined_pct"] == round(100 * 23 / 24, 3)
     assert counts["total.candidates"] == 4 * 48
     assert counts["total.missing"] == 4
+    assert counts["total.read.bars_at_or_after_boundary"] == 0
+    assert counts["total.read.outcomes"] == counts["total.eligible"]
+    assert counts["total.read.outcomes_undefined"] == counts["total.missing"]
