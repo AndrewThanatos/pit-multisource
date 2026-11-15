@@ -116,8 +116,8 @@ prints. Expected output, shortened:
 ```
 sizes: 0.3 s wall time
 ...
-sensitivity: 1499.5 s wall time
-example: 0.2 s wall time
+sensitivity: 1116.3 s wall time
+example: 0.1 s wall time
 
 Article values
 id                                 | section         | paper                           | reproduced                      | match
@@ -134,28 +134,29 @@ Supplementary values (reproduced by the code, not printed in the article)
 Not reproducible here — see the Materials record:
 ...
 
-236 match, 0 mismatch, 0 skipped; total wall time 2599.8 s
+238 match, 0 mismatch, 0 skipped; total wall time 1835.6 s
 ```
 
 What each experiment covers and how long it took on an Apple M2 Pro with 16 GB. The summary line
-above is the time of everything `reproduce` does, config loading and printing included (2,599.8 s);
-the whole command, interpreter start-up included, took 2,600.3 s (about 43 minutes) with a peak
-memory of 13.8 GB, reached by the `inputs` check, which holds both routes' state at once.
+above is the time of everything `reproduce` does, config loading and printing included (1,835.6 s,
+about 31 minutes). Times vary with machine load: an earlier run of the same experiments took
+2,600.3 s for the whole command, with a peak memory of 13.8 GB, reached by the `inputs` check,
+which holds both routes' state at once.
 
 | Experiment | Article result | Numbers | Time |
 |---|---|---:|---:|
-| `sizes` | Table 2 (table sizes) | 10 | 0.0 s |
-| `replay` | Table 3 (historical replay against reconstruction), §4.1 | 25 | 116.8 s |
-| `inputs` | the full historical input built by two routes at the 207 replay cutoffs, both assets | 0 + 12 supplementary | 287.7 s |
-| `grouping` | Table 4 (bounded and unbounded grouping), Table 6 rows 4–5, §3.6, §4.2 | 42 | 498.8 s |
-| `sensitivity` | Table 5 (nine clustering settings), §4.3 | 54 + 1 supplementary | 1,499.5 s |
-| `features` | Table 6 rows 1–3 (clock and flag conventions), §4.4 | 14 | 10.8 s |
-| `coverage` | Table 7 (news coverage of the observation windows), §4.5 | 22 | 1.2 s |
+| `sizes` | Table 2 (table sizes) | 10 | 0.1 s |
+| `replay` | Table 3 (historical replay against reconstruction), §4.1 | 25 | 109.9 s |
+| `inputs` | the full historical input built by two routes at the 207 replay cutoffs, both assets | 0 + 12 supplementary | 190.0 s |
+| `grouping` | Table 4 (bounded and unbounded grouping), Table 6 rows 4–5, §3.6, §4.2 | 42 | 277.8 s |
+| `sensitivity` | Table 5 (nine clustering settings), §4.3 | 54 + 1 supplementary | 1,116.3 s |
+| `features` | Table 6 rows 1–3 (clock and flag conventions), §4.4 | 14 | 3.2 s |
+| `coverage` | Table 7 (news coverage of the observation windows), §4.5 | 22 | 0.4 s |
 | `targets` | Table 8 (target eligibility), §4.5; reads past the boundary | 21 + 3 supplementary | 0.3 s |
-| `admission` | target admission cases through the target build, the Table 8 count and the reader | 0 + 2 supplementary | 0.1 s |
+| `admission` | target admission cases through the target build, the Table 8 count and the reader | 0 + 2 supplementary | 0.0 s |
 | `descriptive` | slot ledger and cluster shape, §3.6, §4.5 | 16 + 5 supplementary | 1.5 s |
-| `agreement` | agreement of the GDELT theme annotation with the entity-name test, §4.5 | 6 | 182.8 s |
-| `example` | what was knowable at 2023-10-18 12:00 UTC | 0 + 5 supplementary | 0.2 s |
+| `agreement` | agreement of the GDELT theme annotation with the entity-name test, §4.5 | 6 | 135.9 s |
+| `example` | what was knowable at 2023-10-18 12:00 UTC | 0 + 5 supplementary | 0.1 s |
 
 Supplementary values are reproduced by the code but not printed in the article text. `--only`
 runs a subset, for example
