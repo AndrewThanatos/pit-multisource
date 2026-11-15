@@ -103,6 +103,8 @@ EXPERIMENTS: tuple[Experiment, ...] = (
             ),
         },
     ),
+    Experiment("inputs", _call(_M + "inputs:run_inputs", "dataset_root", "config"), ("inputs.",)),
+    Experiment("admission", _call(_M + "admission:run_admission", "config"), ("admission.",)),
     Experiment("features", _call(_M + "features:run_features", "dataset_root"), ("features.",)),
     Experiment(
         "grouping",

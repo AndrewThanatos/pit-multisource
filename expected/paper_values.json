@@ -874,13 +874,6 @@
       "decimals": 3
     },
     {
-      "id": "s43.age24_cluster_increase",
-      "section": "§4.3 text",
-      "experiment": "sensitivity",
-      "key": "sensitivity.min2_age24_minus_min2_age72.clusters",
-      "value": 46311
-    },
-    {
       "id": "s43.age24_cluster_increase_pct",
       "section": "§4.3 text",
       "experiment": "sensitivity",
@@ -1450,13 +1443,6 @@
       "value": 21
     },
     {
-      "id": "s45.slots_served",
-      "section": "§4.5 text",
-      "experiment": "descriptive",
-      "key": "ledger.served",
-      "value": 260674
-    },
-    {
       "id": "s45.dev.entries",
       "section": "§4.5 text",
       "experiment": "descriptive",
@@ -1504,42 +1490,6 @@
       "experiment": "descriptive",
       "key": "ledger.dev.identity_matched_minus_duplicates_equals_retained",
       "value": true
-    },
-    {
-      "id": "s45.example.bar_close_time",
-      "section": "§4.5 text",
-      "experiment": "example",
-      "key": "example.bar.close_time",
-      "value": "2023-10-18T11:59:59.999+00:00"
-    },
-    {
-      "id": "s45.example.bar_close",
-      "section": "§4.5 text",
-      "experiment": "example",
-      "key": "example.bar.close",
-      "value": 28340.64,
-      "decimals": 2
-    },
-    {
-      "id": "s45.example.news_records",
-      "section": "§4.5 text",
-      "experiment": "example",
-      "key": "example.news.records",
-      "value": 49
-    },
-    {
-      "id": "s45.example.news_clusters",
-      "section": "§4.5 text",
-      "experiment": "example",
-      "key": "example.news.clusters",
-      "value": 30
-    },
-    {
-      "id": "s45.example.next_release_date",
-      "section": "§4.5 text",
-      "experiment": "example",
-      "key": "example.next_release.date",
-      "value": "2023-11-01"
     },
     {
       "id": "s45.agreement.btc.deployed.kappa",
@@ -1618,6 +1568,175 @@
       "key": "cluster_shape.domains.mean",
       "value": 2.04,
       "decimals": 3
+    },
+    {
+      "id": "sup.age24_cluster_increase",
+      "section": "supplementary (not in the article text)",
+      "experiment": "sensitivity",
+      "key": "sensitivity.min2_age24_minus_min2_age72.clusters",
+      "value": 46311
+    },
+    {
+      "id": "sup.slots_served",
+      "section": "supplementary (not in the article text)",
+      "experiment": "descriptive",
+      "key": "ledger.served",
+      "value": 260674
+    },
+    {
+      "id": "sup.example.bar_close_time",
+      "section": "supplementary (not in the article text)",
+      "experiment": "example",
+      "key": "example.bar.close_time",
+      "value": "2023-10-18T11:59:59.999+00:00"
+    },
+    {
+      "id": "sup.example.bar_close",
+      "section": "supplementary (not in the article text)",
+      "experiment": "example",
+      "key": "example.bar.close",
+      "value": 28340.64,
+      "decimals": 2
+    },
+    {
+      "id": "sup.example.news_records",
+      "section": "supplementary (not in the article text)",
+      "experiment": "example",
+      "key": "example.news.records",
+      "value": 49
+    },
+    {
+      "id": "sup.example.news_clusters",
+      "section": "supplementary (not in the article text)",
+      "experiment": "example",
+      "key": "example.news.clusters",
+      "value": 30
+    },
+    {
+      "id": "sup.example.next_release_date",
+      "section": "supplementary (not in the article text)",
+      "experiment": "example",
+      "key": "example.next_release.date",
+      "value": "2023-11-01"
+    },
+    {
+      "id": "sup.inputs.compared",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.compared",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.market.equal",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.market.equal",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.news.equal",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.news.equal",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.calendar.equal",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.calendar.equal",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.indicators.equal",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.indicators.equal",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.complete.equal",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.complete.equal",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.fault.final_relevance.changed",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.final_relevance.changed",
+      "value": 232
+    },
+    {
+      "id": "sup.inputs.fault.final_relevance.detected",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.final_relevance.detected",
+      "value": 232
+    },
+    {
+      "id": "sup.inputs.fault.forming_bar.changed",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.forming_bar.changed",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.fault.forming_bar.detected",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.forming_bar.detected",
+      "value": 414
+    },
+    {
+      "id": "sup.inputs.fault.unknown_schedule.changed",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.unknown_schedule.changed",
+      "value": 32
+    },
+    {
+      "id": "sup.inputs.fault.unknown_schedule.detected",
+      "section": "supplementary (not in the article text)",
+      "experiment": "inputs",
+      "key": "inputs.fault.unknown_schedule.detected",
+      "value": 32
+    },
+    {
+      "id": "sup.admission.cases",
+      "section": "supplementary (not in the article text)",
+      "experiment": "admission",
+      "key": "admission.cases",
+      "value": 9
+    },
+    {
+      "id": "sup.admission.passed",
+      "section": "supplementary (not in the article text)",
+      "experiment": "admission",
+      "key": "admission.passed",
+      "value": 9
+    },
+    {
+      "id": "sup.targets.read.bars_at_or_after_boundary",
+      "section": "supplementary (not in the article text)",
+      "experiment": "targets",
+      "key": "total.read.bars_at_or_after_boundary",
+      "value": 0
+    },
+    {
+      "id": "sup.targets.read.outcomes",
+      "section": "supplementary (not in the article text)",
+      "experiment": "targets",
+      "key": "total.read.outcomes",
+      "value": 230728
+    },
+    {
+      "id": "sup.targets.read.outcomes_undefined",
+      "section": "supplementary (not in the article text)",
+      "experiment": "targets",
+      "key": "total.read.outcomes_undefined",
+      "value": 280
     }
   ],
   "not_reproducible": [
