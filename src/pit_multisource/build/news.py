@@ -6,9 +6,10 @@ import argparse
 import ipaddress
 import re
 from collections import deque
-from collections.abc import Sequence
+from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from typing import NamedTuple
 from urllib.parse import urlsplit
 
 import polars as pl
@@ -157,9 +158,6 @@ def build_news(
     params = ClusterParams.from_config(config) if params is None else params
     frame = _prepared(records, config)
     state = _Clusters(params)
-    stop = config.news.stop_entities
-    patterns = {a: entity_pattern(config.news.entity_terms[a]) for a in ASSETS}
-    asset_tokens = {a: frozenset(config.news.asset_theme_tokens[a]) for a in ASSETS}
 
     cluster_index: list[int] = []
     first_seen: list[bool] = []
@@ -171,38 +169,18 @@ def build_news(
     statuses: list[str] = []
     present: list[float] = []
 
-    columns = ("record_id", "slot_us", "url", "source", "names", "orgs", "tone", "themes")
-    for chunk in frame.select(columns).iter_slices(_CHUNK_ROWS):
-        for record_id, now, url, source, names, orgs, tone, themes in zip(
-            *(chunk.get_column(c).to_list() for c in columns), strict=True
-        ):
-            entities = {normalize_entity(t) for t in f"{names};{orgs}".split(";")}
-            entities.discard("")
-            entities -= stop
-            first_seen.append(url not in state.url_cluster)
-            k = state.assign(record_id, now, url, frozenset(entities))
-
-            tokens = theme_tokens(themes) if themes is not None else set()
-            haystack = f"{names};{orgs};{url}"
-            named = {
-                a: bool(asset_tokens[a] & tokens) or patterns[a].search(haystack) is not None
-                for a in ASSETS
-            }
-            relevant = named if any(named.values()) else dict.fromkeys(ASSETS, True)
-            for a in ASSETS:
-                flags[a].append(relevant[a])
-                if relevant[a] and state.earned_at[a][k] is None:
-                    state.earned_at[a][k] = now
-                    state.earned_by[a][k] = record_id
-            basis.append("named" if any(named.values()) else "tag_both_assets")
-
-            cluster_index.append(k)
-            tones.append(parse_tone(tone))
-            n_entities.append(len(entities))
-            domain, status, mask = resolve_source_domain(source, url)
-            domains.append(domain)
-            statuses.append(status)
-            present.append(mask)
+    for step in _walk(frame, config, state):
+        cluster_index.append(step.cluster)
+        first_seen.append(step.first_seen)
+        for a in ASSETS:
+            flags[a].append(step.relevant[a])
+        basis.append("named" if step.named else "tag_both_assets")
+        tones.append(parse_tone(step.tone))
+        n_entities.append(step.n_entities)
+        domain, status, mask = resolve_source_domain(step.source, step.url)
+        domains.append(domain)
+        statuses.append(status)
+        present.append(mask)
 
     cluster_ids = pl.Series(state.ids, dtype=pl.String())
     out = frame.select("record_id", "slot_time", "url").with_columns(
@@ -222,6 +200,88 @@ def build_news(
         state.url_joins,
         state.url_joins_refused,
     )
+
+
+class _Step(NamedTuple):
+    record_id: str
+    slot_us: int
+    cluster: int
+    first_seen: bool
+    relevant: dict[str, bool]
+    named: bool
+    tone: str
+    n_entities: int
+    source: str
+    url: str
+
+
+class StreamedRecord(NamedTuple):
+    """One record as the chronological build assigns it."""
+
+    record_id: str
+    slot_us: int
+    cluster_id: str
+    btc_relevant: bool
+    eth_relevant: bool
+    source_domain: str | None
+
+
+def _walk(frame: pl.DataFrame, config: Config, state: _Clusters) -> Iterator[_Step]:
+    """Assigns the prepared records one by one and dates the cluster flags as it goes."""
+    stop = config.news.stop_entities
+    patterns = {a: entity_pattern(config.news.entity_terms[a]) for a in ASSETS}
+    asset_tokens = {a: frozenset(config.news.asset_theme_tokens[a]) for a in ASSETS}
+    columns = ("record_id", "slot_us", "url", "source", "names", "orgs", "tone", "themes")
+    for chunk in frame.select(columns).iter_slices(_CHUNK_ROWS):
+        for record_id, now, url, source, names, orgs, tone, themes in zip(
+            *(chunk.get_column(c).to_list() for c in columns), strict=True
+        ):
+            entities = {normalize_entity(t) for t in f"{names};{orgs}".split(";")}
+            entities.discard("")
+            entities -= stop
+            first_seen = url not in state.url_cluster
+            k = state.assign(record_id, now, url, frozenset(entities))
+
+            tokens = theme_tokens(themes) if themes is not None else set()
+            haystack = f"{names};{orgs};{url}"
+            named = {
+                a: bool(asset_tokens[a] & tokens) or patterns[a].search(haystack) is not None
+                for a in ASSETS
+            }
+            relevant = named if any(named.values()) else dict.fromkeys(ASSETS, True)
+            for a in ASSETS:
+                if relevant[a] and state.earned_at[a][k] is None:
+                    state.earned_at[a][k] = now
+                    state.earned_by[a][k] = record_id
+            yield _Step(
+                record_id,
+                now,
+                k,
+                first_seen,
+                relevant,
+                any(named.values()),
+                tone,
+                len(entities),
+                source,
+                url,
+            )
+
+
+def stream_records(
+    records: pl.DataFrame, config: Config, params: ClusterParams | None = None
+) -> Iterator[StreamedRecord]:
+    """The records in (slot time, record id) order, each with the cluster it joins on arrival."""
+    params = ClusterParams.from_config(config) if params is None else params
+    state = _Clusters(params)
+    for step in _walk(_prepared(records, config), config, state):
+        yield StreamedRecord(
+            step.record_id,
+            step.slot_us,
+            state.ids[step.cluster],
+            step.relevant["btc"],
+            step.relevant["eth"],
+            resolve_source_domain(step.source, step.url)[0],
+        )
 
 
 def _prepared(records: pl.DataFrame, config: Config) -> pl.DataFrame:
