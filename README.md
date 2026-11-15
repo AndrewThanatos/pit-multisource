@@ -36,8 +36,8 @@ released tables ─▶ reproduce ─▶ one experiment per article table ─▶ 
 |---|---|---|
 | Acquire | `acquire/binance.py`, `acquire/gdelt.py`, `acquire/calendar.py` | Downloads the raw sources: monthly Binance zips (checksum-verified), 15-minute GDELT GKG archives (with a slot ledger), FOMC and BLS calendar pages |
 | Build | `build/bars.py`, `build/selection.py`, `build/news.py`, `build/entities.py`, `build/source_domains.py`, `build/calendar.py`, `build/targets.py` | Turns the sources into the released tables: bars, selected news records, chronological clusters with dated asset flags, entities, source-domain diagnostics, the release calendar, and diagnostic-period targets |
-| Point in time | `pit/availability.py`, `pit/windows.py` | When a cluster flag becomes knowable; the coverage state of the news window before each decision time |
-| Experiments | `experiments/*.py`, `reproduce.py`, `example.py` | One module per article table, the comparison with the article's values, and the article's worked example |
+| Point in time | `pit/availability.py`, `pit/windows.py`, `pit/inputs.py` | When a cluster flag becomes knowable; the coverage state of the news window before each decision time; the historical input X(u, c) of the article |
+| Experiments | `experiments/*.py`, `reproduce.py`, `example.py` | One module per article table, the comparison with the article's values, and a point-in-time example |
 | Parameters | `configs/pipeline.yaml` | The article's time windows, thresholds, selection terms and diagnostic boundary |
 
 [`docs/pipeline.md`](docs/pipeline.md) shows the whole flow on one page, with the availability
@@ -66,8 +66,8 @@ about 6.4 GB, of which 6.12 GB are the full 27-field GKG records, one zip archiv
 come as zip archives by part; unpack the ones you need into one folder, for example
 `pit-multisource-v1.0.0/`. The example needs only `market.zip`, `news.zip` and `calendar.zip`;
 `reproduce` needs every archive (the raw GKG archives for replay, the grouping comparison, sensitivity and
-agreement, and `diagnostics.zip` for the Table 2 counts). Then ask what was knowable at 2023-10-18 12:00 UTC,
-the article's worked example (Section 4.5):
+agreement, and `diagnostics.zip` for the Table 2 counts). Then ask what was knowable at one moment,
+2023-10-18 12:00 UTC:
 
 ```bash
 pit-multisource example --dataset pit-multisource-v1.0.0
@@ -146,17 +146,19 @@ memory of 6.1 GB.
 |---|---|---:|---:|
 | `sizes` | Table 2 (table sizes) | 10 | 0.3 s |
 | `replay` | Table 3 (historical replay against reconstruction), §4.1 | 23 | 157.5 s |
+| `inputs` | the full historical input built by two routes at the 207 replay cutoffs, both assets | 0 + 12 supplementary | TIME_INPUTS |
 | `grouping` | Table 4 (bounded and unbounded grouping), Table 6 rows 4–5, §3.6, §4.2 | 42 | 326.4 s |
-| `sensitivity` | Table 5 (nine clustering settings), §4.3 | 55 | 1,333.2 s |
+| `sensitivity` | Table 5 (nine clustering settings), §4.3 | 54 + 1 supplementary | 1,333.2 s |
 | `features` | Table 6 rows 1–3 (clock and flag conventions), §4.4 | 14 | 4.3 s |
 | `coverage` | Table 7 (news coverage of the observation windows), §4.5 | 22 | 1.3 s |
-| `targets` | Table 8 (target eligibility), §4.5 | 21 | 1.1 s |
-| `descriptive` | slot ledger and cluster shape, §3.6, §4.5 | 17 + 4 supplementary | 2.2 s |
+| `targets` | Table 8 (target eligibility), §4.5; reads past the boundary | 21 + 3 supplementary | 1.1 s |
+| `admission` | target admission cases through the target build, the Table 8 count and the reader | 0 + 2 supplementary | TIME_ADMISSION |
+| `descriptive` | slot ledger and cluster shape, §3.6, §4.5 | 16 + 5 supplementary | 2.2 s |
 | `agreement` | agreement of the GDELT theme annotation with the entity-name test, §4.5 | 6 | 211.6 s |
-| `example` | worked example, §4.5 | 5 | 0.1 s |
+| `example` | what was knowable at 2023-10-18 12:00 UTC | 0 + 5 supplementary | 0.1 s |
 
-The four supplementary values are reproduced by the code and reported in Supplementary
-Material S1, not in the article text. `--only` runs a subset, for example
+Supplementary values are reproduced by the code but not printed in the article text. `--only`
+runs a subset, for example
 `pit-multisource reproduce --dataset pit-multisource-v1.0.0 --only sizes coverage targets`.
 
 ## Rebuild the dataset from its sources
@@ -225,7 +227,8 @@ them at the end of every run:
 - run times and memory of the article's experiments (Table 4, §4.5); the times above are this
   package on one machine;
 - the two diagnostic access incidents (56 boundary-crossing target rows and 35,096 out-of-scope
-  outcome rows) and the seven synthetic access-control cases of the diagnostic target reader;
+  outcome rows) and the seven synthetic access-control cases of the diagnostic target reader (the
+  `admission` experiment runs the same kinds of case on this package's reader);
 - the repeatability check of the diagnostic outputs and the freeze-manifest check of the inputs;
 - the backup and recovery checks;
 - the model-assisted second annotation pass and the page audit;

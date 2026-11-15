@@ -30,14 +30,16 @@ the experiments read.
 |---|---|---|
 | `sizes` | every released table | Table 2 |
 | `replay` | `gkg_records`, `news_records`, `news_clusters` | Table 3, §4.1 |
+| `inputs` | `gkg_records`, `news_records`, `news_clusters`, `market/*_1h`, calendar | the full historical input by two routes at the 207 replay cutoffs |
 | `grouping` | `gkg_records` and the shared record ids from the Materials record | Table 4, Table 6 rows 4–5, §3.6, §4.2 |
 | `sensitivity` | `gkg_records` | Table 5, §4.3 |
 | `features` | `news_records`, `news_clusters` | Table 6 rows 1–3, §4.4 |
 | `coverage` | `gdelt_slots`, `news_records` | Table 7, §4.5 |
 | `targets` | `market/*_1m` (targets rebuilt for the diagnostic period) | Table 8, §4.5 |
+| `admission` | synthetic one-minute bars | target admission through the target build, the Table 8 count and the reader |
 | `descriptive` | slot ledger, `news_records` | §3.6, §4.5 |
 | `agreement` | `gkg_records` | §4.5 (theme annotation against the entity-name test) |
-| `example` | market, news, calendar | §4.5 worked example |
+| `example` | market, news, calendar | what was knowable at 2023-10-18 12:00 UTC |
 
 ## When a row may be used
 

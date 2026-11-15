@@ -1,6 +1,6 @@
 """What was knowable at one decision time from the market, news and calendar channels.
 
-The article's worked example (§4.5) at 2023-10-18 12:00 UTC. A bar is usable once closed
+The decision time is 2023-10-18 12:00 UTC. A bar is usable once closed
 (`close_time <= H`); a news record once its 15-minute slot has ended (`slot_time + 15 min <= H`),
 the one-hour window keeping those that became available in (H − 1 h, H]; a future release only if
 its schedule was known (`schedule_available_at <= H`).
@@ -71,8 +71,6 @@ def _run(args: argparse.Namespace) -> int:
 
 @register
 def _register_commands(subparsers: argparse._SubParsersAction) -> None:
-    parser = subparsers.add_parser(
-        "example", help="what was knowable at 2023-10-18 12:00 UTC (the article's example)"
-    )
+    parser = subparsers.add_parser("example", help="what was knowable at 2023-10-18 12:00 UTC")
     parser.add_argument("--dataset", type=Path, required=True, help="released dataset directory")
     parser.set_defaults(func=_run)
