@@ -86,7 +86,7 @@ def run_admission(config: Config) -> dict[str, int | bool]:
         "label_one_microsecond_before_the_boundary": _admission_case(
             c, [*defined_early, (b - M - US, 110.0)], early, True, True
         ),
-        "exit_bar_at_the_boundary_is_never_read": _admission_case(
+        "exit_bar_after_the_boundary_is_never_read": _admission_case(
             c, [(late, 100.0), (late + 30 * S, 100.0), (b + 30 * S, 110.0)], late, False, False
         ),
         "undefined_ceiling_after_the_boundary": _admission_case(
