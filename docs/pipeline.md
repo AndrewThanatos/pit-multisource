@@ -47,7 +47,7 @@ Each source has its own clock. A row may be used at decision time `H` when:
 
 | Source | Rule | Where in the code |
 |---|---|---|
-| Market bars | the bar has closed: `close_time <= H` (robust form: `open_time + interval <= H`) | `example.py` |
+| Market bars | the bar's interval has ended: `open_time + interval <= H`; the stored `close_time` is irregular for nine bars per file | `example.py`, `pit/inputs.py` |
 | News records | their 15-minute GDELT slot has ended: `slot_time + 15 min <= H`. `slot_time` is the archive slot, not the publication time | `pit/availability.py`, `example.py` |
 | Clusters | the opening record's slot has ended: `opened_at + 15 min <= H` | `experiments/replay.py` |
 | Cluster asset flags | the record that earned the flag became available: `*_relevant_earned_at + 15 min <= H` | `pit/availability.py` |

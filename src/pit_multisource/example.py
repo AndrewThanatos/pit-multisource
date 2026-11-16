@@ -1,9 +1,9 @@
 """What was knowable at one decision time from the market, news and calendar channels.
 
-The decision time is 2023-10-18 12:00 UTC. A bar is usable once closed
-(`close_time <= H`); a news record once its 15-minute slot has ended (`slot_time + 15 min <= H`),
-the one-hour window keeping those that became available in (H − 1 h, H]; a future release only if
-its schedule was known (`schedule_available_at <= H`).
+The decision time is 2023-10-18 12:00 UTC. A bar is usable once its hour has ended
+(`open_time + 1 h <= H`); a news record once its 15-minute slot has ended
+(`slot_time + 15 min <= H`), the one-hour window keeping those that became available in
+(H − 1 h, H]; a future release only if its schedule was known (`schedule_available_at <= H`).
 """
 
 from __future__ import annotations
@@ -19,15 +19,16 @@ from pit_multisource.commands import register
 DECISION_TIME = datetime(2023, 10, 18, 12, tzinfo=UTC)
 SLOT = timedelta(minutes=15)
 WINDOW = timedelta(hours=1)
+BAR = timedelta(hours=1)
 
 
 def point_in_time(dataset_root: Path, at: datetime = DECISION_TIME) -> dict[str, object]:
-    """The last closed BTC bar, the one-hour news window and the releases around `at`."""
+    """The last completed BTC bar, the one-hour news window and the releases around `at`."""
     root = Path(dataset_root)
     bar = (
         pl.scan_parquet(root / "market" / "btcusdt_1h.parquet")
-        .filter(pl.col("close_time") <= at)
-        .sort("close_time")
+        .filter(pl.col("open_time") + BAR <= at)
+        .sort("open_time")
         .last()
         .collect()
         .row(0, named=True)
