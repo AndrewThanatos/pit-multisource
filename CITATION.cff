@@ -5,7 +5,7 @@ title: "pit-multisource: point-in-time construction of a multisource dataset and
 abstract: >-
   Rebuilds the point-in-time multisource dataset of Binance BTC/ETH bars, GDELT GKG news metadata
   and US release calendars from its sources, and reproduces the numbers of the article
-  "Point-in-Time Consistency for Multisource Time-Series Data" from the released dataset. Every released table except the raw GKG records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity builds start from the released raw GKG records and the source-domain build from the released news records.
+  "Point-in-Time Consistency for Multisource Time-Series Data" from the released dataset. Every released table except the raw GKG records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity builds start from the released raw GKG records and the source-domain build from the released news records. Two further checks build the complete historical input by two separate routes at 207 cutoffs, and test target admission through every consumer of the targets.
 version: "1.0.0"
 doi: 10.5281/zenodo.23886257
 license: MIT

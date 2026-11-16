@@ -10,15 +10,20 @@ Time-Series Data: A Formal Model and Construction Method for Evolving News Metad
 (Journal of Big Data, 2026).
 
 "Point in time" means that every row keeps the timestamps needed to decide what was knowable at a
-given moment, so historical inputs can be assembled without information that arrived later. The
-released dataset is on Zenodo ([DOI 10.5281/zenodo.23886186](https://doi.org/10.5281/zenodo.23886186));
-this repository is the code that built it and the code that recomputes the article's tables from it.
+given moment, so historical inputs can be assembled without information that arrived later.
+
+| Record | What it holds | DOI |
+|---|---|---|
+| Code (this repository) | Builds the dataset from its sources and recomputes the article's numbers from it | [10.5281/zenodo.23886257](https://doi.org/10.5281/zenodo.23886257) |
+| Dataset | The released point-in-time dataset (6.4 GB, Parquet) | [10.5281/zenodo.23886186](https://doi.org/10.5281/zenodo.23886186) |
+| Materials | Supplementary Material S1 of the article and two inputs `reproduce` needs | [10.5281/zenodo.23886238](https://doi.org/10.5281/zenodo.23886238) |
 
 Rewritten from the research codebase used for the article. Every released table except the raw GKG
 records, the slot ledger and `news/gdelt_slots.parquet` is rebuilt from sources and compared row for
 row; GDELT selection is checked on a 30-slot sample of the original archives; the news and entity
 builds start from the released raw GKG records and the source-domain build from the released news
-records.
+records. Two further checks build the complete historical input by two separate routes at 207
+cutoffs (`inputs`) and test target admission through every consumer of the targets (`admission`).
 
 ## What is inside
 
